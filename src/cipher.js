@@ -1,5 +1,3 @@
 window.cipher = {
-  aaa
-  asdsfsaf
-  // ... 
+  
 };
