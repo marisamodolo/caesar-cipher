@@ -1,4 +1,1 @@
-window.cipher = {
-    aaa
-  
-};
+
