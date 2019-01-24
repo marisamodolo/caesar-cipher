@@ -8,12 +8,12 @@
   <body>
     <div class="box">
     <label for="message" class="msg">Mensagem a ser codificada:</label>
-    <input type="text" id="message">
+    <input type="text" id="message" />
     <label for="offset" class="msg">Deslocamento:</label>
-    <input type="text" id="offset">
+    <input type="text" id="offset" />
     <label for="messageDecode" class="msg">Mensagem a ser descodificada:</label>
-    <input type="text" id="messageDecode">
-    <input type="button" id="encode" value="Codificar">
+    <input type="text" id="messageDecode" />
+    <input type="button" onclick="encode(offset, message)" id="encode" value="Codificar">
     <input type="button" id="decode" value="Decodificar">
     </div>
     <div id="root"></div>
