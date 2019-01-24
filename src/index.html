@@ -8,13 +8,16 @@
   <body>
     <div class="box">
     <label for="message" class="msg">Mensagem a ser codificada:</label>
-    <input type="text" id="message" />
+    <input type="text" id="message"/> </br>
     <label for="offset" class="msg">Deslocamento:</label>
-    <input type="text" id="offset" />
+    <input type="text" id="offset" /></br>
     <label for="messageDecode" class="msg">Mensagem a ser descodificada:</label>
-    <input type="text" id="messageDecode" />
-    <input type="button" onclick="encode(offset, message)" id="encode" value="Codificar">
-    <input type="button" id="decode" value="Decodificar">
+    <input type="text" id="messageDecode" /></br>
+    <input type="button" onclick="encode()" id="encode" value="Codificar">
+    <input type="button" onclick="decode()" id="decode" value="Decodificar">
+    <div id="result">
+      <p id="resultmsg"></p>
+    </div>
     </div>
     <div id="root"></div>
     <script src="cipher.js"></script>
