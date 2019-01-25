@@ -1,57 +1,48 @@
-function encode(offset, message){
-    let messageNoCodif = document.getElementById("message").value;
-    let offsetMsg = document.getElementById("offset").value;
+let result;
+let finalAscii;
+let msgResult;
 
-    let result = []; 
-    let x = parseInt(offsetMsg); 
-    let b = [];
-    let y; 
-    let a;
+function caesarEncode(){
+    const string = document.getElementById("message").value;
+    const offset = document.getElementById("offset").value;
+    msgResult = encode(offset, string);
+    document.getElementById("resultmsg").innerHTML = msgResult;
+}
 
-    for(let i = 0; i < messageNoCodif.length; i++){
-        result[i] = messageNoCodif.charCodeAt(i);
-       // if(x > 0){
-            a = (( result[i] - 32 + x)%94)+ 32;
-       // }
-        /*if(x < 0){
-            a = (( result[i] - 65 - (-x))%26)+ 65;
-         console.log("negativo")
-        }*/
-        b[i] = String.fromCharCode(a);
-        y = b.join("");
-        console.log(b); 
-        }  
-        document.getElementById("resultmsg").innerHTML = y;
+function caesarDecode(){
+    const string = document.getElementById("messageDecode").value;
+    const offset = document.getElementById("offset").value;
+    msgResult = decode(offset, string);
+    document.getElementById("resultmsg").innerHTML = msgResult;
+}
+
+function encode(offset, string){
+    offset = parseInt(offset);
+    let currentLetter = [];
+    
+    for(let i=0; i < string.length; i++){
+       currentLetter[i] = string.charCodeAt(i);
+       finalAscii =(( currentLetter[i] - 33 + offset)%94)+33;
+       currentLetter[i] = String.fromCharCode(finalAscii);
+       result = currentLetter.join("");
+       console.log(finalAscii);
     }
-//criar função para encode e decode que use os paramentros;
-    function decode(offset, messageDecode){
-    let messageNoCodif = document.getElementById("messageDecode").value;
-    let offsetMsg = document.getElementById("offset").value;
+    return result;
+}
 
-    let result = []; 
-    let x = parseInt(offsetMsg); 
-    let b = [];
-    let y; 
-    let a;
+function decode(offset, string){
+    offset = parseInt(offset);
+    let currentLetter = [];
 
-    for(let i = 0; i < messageNoCodif.length; i++){
-        result[i] = messageNoCodif.charCodeAt(i);
-        //if(x > 0){
-            a = ((( result[i] - 32 + -x)%94)+32);
-            
-        //}
-        /*if(x < 0){
-            a = (( result[i] - 65 - (-x))%26)+ 65;
-         console.log("negativo")
-        }*/
-        b[i] = String.fromCharCode(a);
-        y = b.join("");
-        
-        console.log(a); 
-        }  
-        document.getElementById("resultmsg").innerHTML = y;
-
+    for(let i=0; i < string.length; i++){
+      currentLetter[i] = string.charCodeAt(i);
+      finalAscii = ((currentLetter[i] - 33 - offset)%94)+ 33;
+      currentLetter[i] = String.fromCharCode(finalAscii);
+      result = currentLetter.join("");
+      console.log(finalAscii);
 
     }
+    return result;
 
-    function caesarEncode()
+}
+

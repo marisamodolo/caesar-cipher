@@ -13,14 +13,13 @@
     <input type="text" id="offset" /></br>
     <label for="messageDecode" class="msg">Mensagem a ser descodificada:</label>
     <input type="text" id="messageDecode" /></br>
-    <input type="button" onclick="encode()" id="encode" value="Codificar">
-    <input type="button" onclick="decode()" id="decode" value="Decodificar">
-    <div id="result">
+    <input type="button" onclick="caesarEncode()" id="encode" value="Codificar">
+    <input type="button" onclick="caesarDecode()" id="decode" value="Decodificar">
+    <div>
       <p id="resultmsg"></p>
     </div>
     </div>
     <div id="root"></div>
     <script src="cipher.js"></script>
-    <script src="tests.js"></script>
   </body>
 </html>
