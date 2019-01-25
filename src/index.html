@@ -4,22 +4,42 @@
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet"> 
   </head>
   <body>
-    <div class="box">
-    <label for="message" class="msg">Mensagem a ser codificada:</label>
-    <input type="text" id="message"/> </br>
-    <label for="offset" class="msg">Deslocamento:</label>
-    <input type="text" id="offset" /></br>
-    <label for="messageDecode" class="msg">Mensagem a ser descodificada:</label>
-    <input type="text" id="messageDecode" /></br>
-    <input type="button" onclick="caesarEncode()" id="encode" value="Codificar">
-    <input type="button" onclick="caesarDecode()" id="decode" value="Decodificar">
+    <img class="logo" src="https://uploaddeimagens.com.br/images/001/857/123/original/the_16th_annual_ascot%281%29.png" />
+    <img class="padlock" src="https://media.giphy.com/media/Bcgilnov0J67b4AH2B/giphy.gif"/>
+    <img class="keygif" src="https://media.giphy.com/media/ZxLTXsTI5KcJ8M6bRM/giphy.gif" />
+    <img class="block1" src="https://madeirasgasometro.vteximg.com.br/arquivos/ids/166360-1000-1000/produto-laminado-pertech-pp0015-preto-br.jpg"/>
+    <img class="block2" src="https://madeirasgasometro.vteximg.com.br/arquivos/ids/166360-1000-1000/produto-laminado-pertech-pp0015-preto-br.jpg"/>
+    <div class="box1">
+    <h1 class="msg">ESCREVA O QUE VOCÊ QUER MANTER EM SEGREDO!</h1> </br>
+    <input type="text" class="msgbox" id="message"/> </br>
+    </div>
+    <div class="box2">
+    <h1 class="msg">CHAVE:</h1></br>
+      <input type="text" class="offsetBox" id="offset" /></br>
+    </div> 
+    <div  id= "boxMsgEncode" class="box3" style="display: none">
+      <h1 class="msg">AQUI ESTÁ SUA MENSAGEM CODIFICADA</h1>
+      <p class ="msg" style="color: blue;" id="resultMsg1"></p>
+    </div>
+    <div class="box4">
+      <h1 class="msg">RECEBEU UMA MENSAGEM CODIFICADA? </br>REVELE-A AQUI!</h1></br>
+    <input type="text" class="msgbox" id="messageDecode" /></br>
+    </div>
+    <div class="box5">
+    <h1 class="msg">CHAVE:</h1></br>
+      <input type="text" class="offsetBox" id="offset2" /></br>
+    </div>
+    <div  id= "boxMsgDecode" class="box6" style="display: none">
+      <h1 class="msg">AQUI ESTÁ SUA MENSAGEM DECIFRADA</h1>
+      <p class ="msg" style="color: red;" id="resultMsg2"></p>
+    </div>
+    <input type="button" class = "btnEncode" onclick="caesarEncode()" id="encode" value="Codificar">
+    <input type="button" class = "btnDecode" onclick="caesarDecode()" id="decode" value="Decodificar">
     <div>
-      <p id="resultmsg"></p>
     </div>
-    </div>
-    <div id="root"></div>
     <script src="cipher.js"></script>
   </body>
 </html>
