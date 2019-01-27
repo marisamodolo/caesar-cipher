@@ -36,10 +36,14 @@ function caesarDecode(){
 function encode(offset, string){
     offset = parseInt(offset);
     let currentLetter = [];
-    
+        
     for(let i=0; i < string.length; i++){
        currentLetter[i] = string.charCodeAt(i);
-       finalAscii =(( currentLetter[i] - 33 + offset)%94)+33;
+       if(currentLetter[i]>= 192 && currentLetter[i] <= 253){
+        finalAscii =( currentLetter[i] - 192 +(offset%61)+61)%61+192;
+      }else{
+       finalAscii =( currentLetter[i] - 32 +(offset%94)+94)%94+32;
+      }
        currentLetter[i] = String.fromCharCode(finalAscii);
        result = currentLetter.join("");
        console.log(finalAscii);
@@ -53,11 +57,11 @@ function decode(offset, string){
 
     for(let i=0; i < string.length; i++){
       currentLetter[i] = string.charCodeAt(i);
-      if( offset >=62){
-       
-       console.log("entrou no maior que 62")
+      if(currentLetter[i]>= 192 && currentLetter[i] <= 253){
+        finalAscii =( currentLetter[i] - 192 -(offset%61)+61)%61+192;
+      }else{
+      finalAscii = ( currentLetter[i] - 32 -(offset%94)+94)%94+32;
       }
-      finalAscii = ((currentLetter[i] - 33 - offset)%94)+33;
       currentLetter[i] = String.fromCharCode(finalAscii);
       result = currentLetter.join("");
       console.log(finalAscii);
