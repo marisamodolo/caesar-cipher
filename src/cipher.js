@@ -1,21 +1,28 @@
-let result;
 let finalAscii;
-let msgResultEncode;
-let msgResultDecode;
-let mudarDiv;
+let showDiv;
 
 function caesarEncode(){
   console.log("entrou no caesar encode");
     let string = document.getElementById("message").value;
     let offset = document.getElementById("offset").value;
-    msgResultEncode = encode(offset, string);
+    let msgResultEncode = encode(offset, string);
     document.getElementById("resultMsg1").innerHTML = msgResultEncode;
-    mudarDiv = document.getElementById('boxMsgEncode').style.display;
+    showDiv = document.getElementById('boxMsgEncode').style.display;
   
-    if(mudarDiv == "none"){
+    if(showDiv == "none" &&  msgResultEncode != undefined && offset != ""){
       document.getElementById('boxMsgEncode').style.display = 'block';
       document.getElementById('boxMsgDecode').style.display = 'none';
+    }else if(showDiv == "block" && msgResultEncode != undefined && offset != "") {
+      document.getElementById('boxMsgEncode').style.display = 'block';
+    }else{
+      document.getElementById('boxMsgEncode').style.display = 'none';
     }
+    console.log(msgResultEncode)
+
+    document.getElementById("message").value = "";
+    document.getElementById("offset").value = "";
+   
+
     
 }
 
@@ -23,19 +30,28 @@ function caesarDecode(){
   console.log("entrou no caesar decode");
     let string = document.getElementById("messageDecode").value;
     let offset = document.getElementById("offset2").value;
-    msgResultDecode = decode(offset, string);
+    let msgResultDecode = decode(offset, string);
     document.getElementById("resultMsg2").innerHTML = msgResultDecode;
-    mudarDiv = document.getElementById('boxMsgDecode').style.display;
+    showDiv = document.getElementById('boxMsgDecode').style.display;
   
-    if(mudarDiv == "none"){
+    if(showDiv == "none" && msgResultDecode != undefined && offset != "" ){
       document.getElementById('boxMsgDecode').style.display = 'block';
       document.getElementById('boxMsgEncode').style.display = 'none';
+    }else if(showDiv == "block" && msgResultDecode != undefined && offset != "") {
+      document.getElementById('boxMsgDecode').style.display = 'block';
+    }else{
+      document.getElementById('boxMsgDecode').style.display = 'none';
     }
+
+    console.log(msgResultDecode)
+    document.getElementById("messageDecode").value = "";
+    document.getElementById("offset2").value = "";
 }
 
 function encode(offset, string){
     offset = parseInt(offset);
     let currentLetter = [];
+    let result;
         
     for(let i=0; i < string.length; i++){
        currentLetter[i] = string.charCodeAt(i);
@@ -46,7 +62,7 @@ function encode(offset, string){
       }
        currentLetter[i] = String.fromCharCode(finalAscii);
        result = currentLetter.join("");
-       console.log(finalAscii);
+       console.log(result);
     }
     return result;
 }
@@ -54,6 +70,7 @@ function encode(offset, string){
 function decode(offset, string){
     offset = parseInt(offset);
     let currentLetter = [];
+    let result;
 
     for(let i=0; i < string.length; i++){
       currentLetter[i] = string.charCodeAt(i);
@@ -64,7 +81,7 @@ function decode(offset, string){
       }
       currentLetter[i] = String.fromCharCode(finalAscii);
       result = currentLetter.join("");
-      console.log(finalAscii);
+      console.log(result);
 
     }
     return result;

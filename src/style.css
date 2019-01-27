@@ -4,7 +4,7 @@ html{
   background-size: 35% 80em;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-family: 'Caveat Brush', cursive;
+  font-family: 'Kodchasan', sans-serif;
   
 }
 .logo{
@@ -104,7 +104,7 @@ html{
   
   position: fixed;
   left: 37%;
-  top: 55%;
+  top: 50%;
   color: #020405;
   text-align: left;
   height: 20%;
@@ -124,7 +124,7 @@ html{
 .box6{
   position: fixed;
   left: 37%;
-  top: 75%;
+  top: 80%;
   color: #020405;
   text-align: center;
   height: 20%;
@@ -135,10 +135,10 @@ html{
   width: 100%;
   height:150%;
   font-size: 2em;
+  font-family: 'Kodchasan', sans-serif;
 }
 
 .msg{
-  font-family: 'Caveat Brush', cursive;
   font-size: 2em;  
 
 }
@@ -167,8 +167,9 @@ html{
 
 }
 .msgbox{
+  font-family: 'Kodchasan', sans-serif;
   background-color: rgba(255, 0, 0, 0);
-  font-size: 1em;
+  font-size: 2em;
   border: none;
   border-bottom: 2px solid rgb(163, 156, 156);
   width: 100%;
