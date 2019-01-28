@@ -1,8 +1,6 @@
 let finalAscii;
 let showDiv;
 
-//aaaa
-
 function caesarEncode(){
   console.log("entrou no caesar encode");
     let string = document.getElementById("message").value;
@@ -52,18 +50,17 @@ function caesarDecode(){
 
 function encode(offset, string){
     offset = parseInt(offset);
-    let currentLetter = [];
-    let result;
+    let result= "";
         
     for(let i=0; i < string.length; i++){
-       currentLetter[i] = string.charCodeAt(i);
-       if(currentLetter[i]>= 192 && currentLetter[i] <= 253){
-        finalAscii =( currentLetter[i] - 192 +(offset%61)+61)%61+192;
+      if(string.charCodeAt(i)>= 65 && string.charCodeAt(i) <= 90){
+        finalAscii =( string.charCodeAt(i) - 65 +(offset%26)+26)%26+65;
+      }else if (string.charCodeAt(i)>= 97 && string.charCodeAt(i) <= 122){
+      finalAscii =( string.charCodeAt(i) - 97 +(offset%26)+26)%26+97;
       }else{
-       finalAscii =( currentLetter[i] - 32 +(offset%94)+94)%94+32;
+       finalAscii = string.charCodeAt(i);
       }
-       currentLetter[i] = String.fromCharCode(finalAscii);
-       result = currentLetter.join("");
+       result += String.fromCharCode(finalAscii);
        console.log(result);
     }
     return result;
@@ -71,20 +68,18 @@ function encode(offset, string){
 
 function decode(offset, string){
     offset = parseInt(offset);
-    let currentLetter = [];
-    let result;
+    let result="";
 
     for(let i=0; i < string.length; i++){
-      currentLetter[i] = string.charCodeAt(i);
-      if(currentLetter[i]>= 192 && currentLetter[i] <= 253){
-        finalAscii =( currentLetter[i] - 192 -(offset%61)+61)%61+192;
+      if(string.charCodeAt(i)>= 65 && string.charCodeAt(i) <= 90){
+        finalAscii =( string.charCodeAt(i) - 65 -(offset%26)+26)%26+65;
+      }else if (string.charCodeAt(i)>= 97 && string.charCodeAt(i) <= 122){
+      finalAscii =( string.charCodeAt(i) - 97 -(offset%26)+26)%26+97;
       }else{
-      finalAscii = ( currentLetter[i] - 32 -(offset%94)+94)%94+32;
+       finalAscii = string.charCodeAt(i);
       }
-      currentLetter[i] = String.fromCharCode(finalAscii);
-      result = currentLetter.join("");
-      console.log(result);
-
+       result += String.fromCharCode(finalAscii);
+       console.log(result);
     }
     return result;
 
