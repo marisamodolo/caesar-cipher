@@ -1,6 +1,8 @@
 let finalAscii;
 let showDiv;
 
+//aaaa
+
 function caesarEncode(){
   console.log("entrou no caesar encode");
     let string = document.getElementById("message").value;
