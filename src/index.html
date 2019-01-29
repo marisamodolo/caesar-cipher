@@ -7,11 +7,13 @@
     <link href="https://fonts.googleapis.com/css?family=Kodchasan" rel="stylesheet">    
   </head>
   <body>
-    <img class="logo" src="https://uploaddeimagens.com.br/images/001/857/123/original/the_16th_annual_ascot%281%29.png" />
-    <img class="padlock" src="https://media.giphy.com/media/Bcgilnov0J67b4AH2B/giphy.gif"/>
-    <img class="keygif" src="https://media.giphy.com/media/ZxLTXsTI5KcJ8M6bRM/giphy.gif" />
+    <img class="padlock" onclick="caesarDecode()" src="https://media.giphy.com/media/Bcgilnov0J67b4AH2B/giphy.gif"/>
+    <img class="keygif" onclick="caesarEncode()"  src="https://media.giphy.com/media/ZxLTXsTI5KcJ8M6bRM/giphy.gif" />
     <img class="block1" src="https://madeirasgasometro.vteximg.com.br/arquivos/ids/166360-1000-1000/produto-laminado-pertech-pp0015-preto-br.jpg"/>
     <img class="block2" src="https://madeirasgasometro.vteximg.com.br/arquivos/ids/166360-1000-1000/produto-laminado-pertech-pp0015-preto-br.jpg"/>
+    
+    <div class ="boxTop">
+    
     <div class="box1">
     <h1 class="msg">ESCREVA O QUE VOCÊ QUER MANTER EM SEGREDO!</h1> </br>
     <input type="text" class="msgbox" id="message"/> </br>
@@ -24,9 +26,12 @@
       <h1 class="msg">AQUI ESTÁ SUA MENSAGEM CODIFICADA</h1>
       <p class ="msg" style="color: blue;" id="resultMsg1"></p>
     </div>
+    
+  </div>
+
     <div class="box4">
       <h1 class="msg">RECEBEU UMA MENSAGEM CODIFICADA? </h1>
-      <h1 style="color:#b99418;">REVELE-A AQUI!</h1></br>
+      <h1 style="color:#b99418; font-size: 1.5em;">REVELE-A AQUI!</h1></br>
     <input type="text" class="msgbox" id="messageDecode" /></br>
     </div>
     <div class="box5">
@@ -36,11 +41,8 @@
     <div  id= "boxMsgDecode" class="box6" style="display: none">
       <h1 class="msg">AQUI ESTÁ SUA MENSAGEM DECIFRADA</h1>
       <p class ="msg" style="color: red;" id="resultMsg2"></p>
-    </div>
-    <input type="button" class = "btnEncode" onclick="caesarEncode()" id="encode" value="Codificar">
-    <input type="button" class = "btnDecode" onclick="caesarDecode()" id="decode" value="Decodificar">
-    <div>
-    </div>
+      </div>
     <script src="cipher.js"></script>
+    <script src ="tests.js"></script>
   </body>
 </html>
