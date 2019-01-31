@@ -1,46 +1,53 @@
 html{
-  background-image: url(http://uploaddeimagens.com.br/images/001/863/312/original/background.png);
+  background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/72850/bf83144c9de9a7bc7aeaab9d165bdbd695b6eb4d.jpg);
   background-position: fixed;
   background-size: 100%;
   background-repeat: no-repeat;
-  font-family: 'Kodchasan', sans-serif;
+  font-family: 'Averia Sans Libre', sans-serif;
+  font-size: 1em;
   max-width: 1920px;
   max-height: 1080px;
   width: auto;
   height: auto;
-  
-}
-body{
-  
 }
 
-
-.block1{
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
-  max-width: 7%;
-  max-height: 15%;
-  width: auto;
-  height: auto;
-  margin: 0%;
-  z-index:0;
-  position:fixed;
-  right:15%;
-  top:10%;
-  border-radius: 10%;
+.toinventandodemaisagora{
+  display: none;
+  background: rgba(0, 0, 0, 0.658);
+  position: fixed;
+  width: 34%;
+  height:100%;
+  color: aliceblue;
+  font-size: 1.5em;
+  text-align: center;
+}
+#btnCaesar{
+  bottom: 15%;
+  left: 9%;
+  position: fixed;
+  background-color: rgb(104, 26, 33);
+  color: white;
+  border: none;
+  width: 15%;
+  height:8%;
+  font-size: 1.1em;
+}
+#btnCaesar:hover{
+  background-color:rgb(141, 65, 65);
 }
 
 .keygif{
   filter: sepia(100%);
   opacity: 0.5;
-  max-width: 7%;
-  max-height: 15%;
+  max-width: 15%;
+  max-height: 25%;
   width: auto;
   height: auto;
   margin: 0%;
   z-index:1;
   position:fixed;
-  right:15%;
-  top:10%;
+  right:11%;
+  top:54%;
 
 }
 
@@ -48,33 +55,18 @@ body{
   opacity: 1;
  }
 
-
-.block2{
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
-  max-width: 7%;
-  max-height: 15%;
-  width: auto;
-  height: auto;
-  margin: 0%;
-  z-index:0;
-  position:fixed;
-  right:15%;
-  top:58%;
-  border-radius: 10%;
-}
-
 .padlock{
   opacity:0.5;
   filter: sepia(100%);
-  max-width: 7%;
-  max-height: 15%;
+  max-width: 20%;
+  max-height: 30%;
   width: auto;
   height: auto;
   margin: 0%;
   z-index:1;
   position:fixed;
-  right:15%;
-  top:58%;
+  right:10%;
+  top:4%;
 }
 .padlock:hover{
  opacity: 1;
@@ -95,7 +87,7 @@ body{
 .box2{
   position: fixed;
   left: 69%;
-  top: 8%;
+  top: 9%;
   color: #020405;
   text-align: left;
   max-height: 5%;
@@ -164,14 +156,16 @@ body{
 
 .msg{
   font-size: 1.5em;  
+  color: rgb(199, 184, 184);
 
 }
 
 .msgbox{
   font-family: 'Kodchasan', sans-serif;
-  background-color: rgba(255, 0, 0, 0);
+  background-color: rgba(92, 38, 38, 0);
   font-size: 1.5em;
   border: none;
-  border-bottom: 2px solid rgb(163, 156, 156);
+  border-bottom: 2px solid rgb(255, 249, 249);
+  color: white;
   width: 100%;
 }

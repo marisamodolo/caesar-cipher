@@ -2,41 +2,38 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
+    <title>Cifra de César</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Kodchasan" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">      
   </head>
   <body>
-    <img class="padlock" onclick="caesarDecode()" src="https://media.giphy.com/media/Bcgilnov0J67b4AH2B/giphy.gif"/>
-    <img class="keygif" onclick="caesarEncode()"  src="https://media.giphy.com/media/ZxLTXsTI5KcJ8M6bRM/giphy.gif" />
-    <img class="block1" src="https://madeirasgasometro.vteximg.com.br/arquivos/ids/166360-1000-1000/produto-laminado-pertech-pp0015-preto-br.jpg"/>
-    <img class="block2" src="https://madeirasgasometro.vteximg.com.br/arquivos/ids/166360-1000-1000/produto-laminado-pertech-pp0015-preto-br.jpg"/>
-    
-    <div class ="boxTop">
-    
+    <img class="padlock" onclick="caesarEncode()" src="https://media.giphy.com/media/Bcgilnov0J67b4AH2B/giphy.gif"/>
+    <img class="keygif" onclick="caesarDecode()"  src="https://media.giphy.com/media/ZxLTXsTI5KcJ8M6bRM/giphy.gif" />
+    <div class ="toinventandodemaisagora" id="divCaesar">
+      <p></br></br>Em criptografia, a <span>Cifra de César</span>, também conhecida como cifra de troca, código de César ou troca de César, é uma das mais simples e conhecidas técnicas de criptografia. É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra, que se apresenta no alfabeto abaixo dela um número fixo de vezes. Por exemplo, com uma troca de três posições, A seria substituído por D, B se tornaria E, e assim por diante. O nome do método é em homenagem a Júlio César, que o usou para se comunicar com os seus generais. </p>
+    </div>
+    <button id="btnCaesar" onclick="aboutCaesar()">Sobre a Cifra de César</button>
     <div class="box1">
-    <h1 class="msg">ESCREVA O QUE VOCÊ QUER MANTER EM SEGREDO!</h1> </br>
+    <h1 class="msg">ESCREVA O QUE VOCÊ QUER </br> MANTER EM SEGREDO!</h1> </br>
     <input type="text" class="msgbox" id="message"/> </br>
     </div>
     <div class="box2">
-    <h1 class="msg">CHAVE:</h1></br>
-      <input type="number" class="offsetBox" id="offset" /></br>
+    <h1 class="msg">CHAVE:</h1></br></br>
+      <input type="text" class="offsetBox" id="offset" /></br>
     </div> 
     <div  id= "boxMsgEncode" class="box3" style="display: none">
       <h1 class="msg">AQUI ESTÁ SUA MENSAGEM CODIFICADA</h1>
       <p class ="msg" style="color: blue;" id="resultMsg1"></p>
     </div>
-    
-  </div>
 
     <div class="box4">
       <h1 class="msg">RECEBEU UMA MENSAGEM CODIFICADA? </h1>
-      <h1 style="color:#b99418; font-size: 1.5em;">REVELE-A AQUI!</h1></br>
+      <h1 style="color:#b99418; font-size: 1.5em;">REVELE-A AQUI!</h1>
     <input type="text" class="msgbox" id="messageDecode" /></br>
     </div>
     <div class="box5">
-    <h1 class="msg">CHAVE:</h1></br>
-      <input type="number" class="offsetBox" id="offset2" /></br>
+    <h1 class="msg">CHAVE:</h1></br></br>
+      <input type="text" class="offsetBox" id="offset2" /></br>
     </div>
     <div  id= "boxMsgDecode" class="box6" style="display: none">
       <h1 class="msg">AQUI ESTÁ SUA MENSAGEM DECIFRADA</h1>

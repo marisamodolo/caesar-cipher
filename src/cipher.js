@@ -1,6 +1,14 @@
 let finalAscii;
 let showDiv;
-
+function aboutCaesar(){
+  if(document.getElementById("divCaesar").style.display === 'block'){
+    document.getElementById("divCaesar").style.display = 'none';
+    document.getElementById("btnCaesar").innerHTML = "Sobre a Cifra de César";
+}else{
+  document.getElementById("divCaesar").style.display = 'block';
+    document.getElementById("btnCaesar").innerHTML = "Voltar";
+}
+}
 function caesarEncode(){
   console.log("entrou no caesar encode");
     let string = document.getElementById("message").value;
@@ -9,13 +17,14 @@ function caesarEncode(){
     document.getElementById("resultMsg1").innerHTML = msgResultEncode;
     showDiv = document.getElementById('boxMsgEncode').style.display;
   
-    if(showDiv == "none" &&  msgResultEncode != undefined && offset != ""){
+    if(showDiv == "none" &&  string !== "" && offset !== ""){
       document.getElementById('boxMsgEncode').style.display = 'block';
       document.getElementById('boxMsgDecode').style.display = 'none';
-    }else if(showDiv == "block" && msgResultEncode != undefined && offset != "") {
+    }else if(showDiv == "block" && string !== "" && offset !== "") {
       document.getElementById('boxMsgEncode').style.display = 'block';
     }else{
       document.getElementById('boxMsgEncode').style.display = 'none';
+      alert("Preencha os campos corretamente!");
     }
     console.log(msgResultEncode)
 
@@ -34,13 +43,15 @@ function caesarDecode(){
     document.getElementById("resultMsg2").innerHTML = msgResultDecode;
     showDiv = document.getElementById('boxMsgDecode').style.display;
   
-    if(showDiv == "none" && msgResultDecode != undefined && offset != "" ){
+    if(showDiv == "none" && string !== "" && offset != "" ){
       document.getElementById('boxMsgDecode').style.display = 'block';
       document.getElementById('boxMsgEncode').style.display = 'none';
-    }else if(showDiv == "block" && msgResultDecode != undefined && offset != "") {
+    }else if(showDiv == "block" && string !== "" && offset != "") {
+      alert("Preencha os campos corretamente!");
       document.getElementById('boxMsgDecode').style.display = 'block';
     }else{
       document.getElementById('boxMsgDecode').style.display = 'none';
+      alert("Preencha os campos corretamente!");
     }
 
     console.log(msgResultDecode)
