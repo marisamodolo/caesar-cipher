@@ -18,7 +18,7 @@ html{
   width: 34%;
   height:100%;
   color: aliceblue;
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: center;
 }
 #btnCaesar{
@@ -40,14 +40,14 @@ html{
   filter: sepia(100%);
   opacity: 0.5;
   max-width: 15%;
-  max-height: 25%;
+  max-height: 20%;
   width: auto;
   height: auto;
   margin: 0%;
   z-index:1;
   position:fixed;
   right:11%;
-  top:54%;
+  top:52%;
 
 }
 
@@ -59,14 +59,14 @@ html{
   opacity:0.5;
   filter: sepia(100%);
   max-width: 20%;
-  max-height: 30%;
+  max-height: 25%;
   width: auto;
   height: auto;
   margin: 0%;
   z-index:1;
   position:fixed;
-  right:10%;
-  top:4%;
+  right:11%;
+  top:2%;
 }
 .padlock:hover{
  opacity: 1;
@@ -79,7 +79,7 @@ html{
   color: #020405;
   text-align: left;
   max-height: 20%;
-  max-width: 30%;
+  max-width: 25%;
   height: auto;
   width: auto;
 }
@@ -113,7 +113,7 @@ html{
   
   position: fixed;
   left: 37%;
-  top: 50%;
+  top: 55%;
   color: #020405;
   text-align: left;
   max-height: 20%;
@@ -125,7 +125,7 @@ html{
 .box5{
   position: fixed;
   left: 69%;
-  top: 55%;
+  top: 56%;
   color: #020405;
   text-align: left;
   max-height: 5%;
