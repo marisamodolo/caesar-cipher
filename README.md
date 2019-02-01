@@ -3,7 +3,7 @@
 ## O que é?
 
 A **Cifra de César** é uma tecnica de criptografia que utiliza a substituição de letras, onde cada letra é substituida por outra, dada uma chave de deslocamento.
-Por exemplo: "**ABC**" se tornaria, com uma chave de deslocamento 3, "**CDE**".
+Por exemplo: "**ABC**" se tornaria, com uma chave de deslocamento 3, "**DEF**".
 
 ## Objetivo:
 O site contendo a Cifra de César foi desenvolvido para atender as pessoas que necessitam de privacidade e procuram uma forma de criptografar suas mensagens, porém não sendo necessário um nível muito complexo para a cifragem e decifragem. O site funciona de forma simples e intuitiva.
