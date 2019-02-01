@@ -1,5 +1,6 @@
 let finalAscii;
 let showDiv;
+
 function aboutCaesar(){
   if(document.getElementById("divCaesar").style.display === 'block'){
     document.getElementById("divCaesar").style.display = 'none';
@@ -7,10 +8,10 @@ function aboutCaesar(){
 }else{
   document.getElementById("divCaesar").style.display = 'block';
     document.getElementById("btnCaesar").innerHTML = "Voltar";
+  }
 }
-}
+
 function caesarEncode(){
-  console.log("entrou no caesar encode");
     let string = document.getElementById("message").value;
     let offset = document.getElementById("offset").value;
     let msgResultEncode = encode(offset, string);
@@ -26,7 +27,6 @@ function caesarEncode(){
       document.getElementById('boxMsgEncode').style.display = 'none';
       alert("Preencha os campos corretamente!");
     }
-    console.log(msgResultEncode)
 
     document.getElementById("message").value = "";
     document.getElementById("offset").value = "";
@@ -36,7 +36,6 @@ function caesarEncode(){
 }
 
 function caesarDecode(){
-  console.log("entrou no caesar decode");
     let string = document.getElementById("messageDecode").value;
     let offset = document.getElementById("offset2").value;
     let msgResultDecode = decode(offset, string);
@@ -54,7 +53,6 @@ function caesarDecode(){
       alert("Preencha os campos corretamente!");
     }
 
-    console.log(msgResultDecode)
     document.getElementById("messageDecode").value = "";
     document.getElementById("offset2").value = "";
 }
@@ -72,7 +70,6 @@ function encode(offset, string){
        finalAscii = string.charCodeAt(i);
       }
        result += String.fromCharCode(finalAscii);
-       console.log(result);
     }
     return result;
 }
@@ -90,7 +87,6 @@ function decode(offset, string){
        finalAscii = string.charCodeAt(i);
       }
        result += String.fromCharCode(finalAscii);
-       console.log(result);
     }
     return result;
 
