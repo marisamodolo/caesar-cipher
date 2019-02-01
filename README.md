@@ -19,7 +19,7 @@ O site contendo a Cifra de César foi desenvolvido para atender as pessoas que n
 ![fluxograma](http://uploaddeimagens.com.br/images/001/866/147/original/Sim.png)
 
 ## Como funciona? *TECH*
-* A partir da mensagem e do deslocamento dado pelo usuário, ao apertar o gif correspondente é chamado a primeira função.
+* A partir da mensagem e do deslocamento dada pelo usuário, ao apertar o gif correspondente é chamado a primeira função.
 * Esta função recolhe os dados fornecidos e chama uma segunda função que utilizará a fórmula para a cifragem do texto.
 * A função secundária retorna a frase já pronta.
 * Em seguida, a função primária checa se todos os campos foram preenchidos de forma correta e se a div referente ao resultado está oculta ou não.
