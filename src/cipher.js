@@ -1,94 +1,76 @@
-let finalAscii;
-let showDiv;
+function caesarEncode () {
+  let string = document.getElementById("message").value;
+  let offset = document.getElementById("offset").value;
+  clearInput("message", "offset");
+  document.getElementById("resultMsg1").innerHTML = encode(offset, string);
+  checkDisplay("boxMsgEncode", "boxMsgDecode", string, offset);
+}
 
-function aboutCaesar(){
-  if(document.getElementById("divCaesar").style.display === 'block'){
-    document.getElementById("divCaesar").style.display = 'none';
-    document.getElementById("btnCaesar").innerHTML = "Sobre a Cifra de César";
-}else{
-  document.getElementById("divCaesar").style.display = 'block';
-    document.getElementById("btnCaesar").innerHTML = "Voltar";
+function caesarDecode () {
+  let string = document.getElementById("messageDecode").value;
+  let offset = document.getElementById("offset2").value;
+  clearInput("messageDecode", "offset2");
+  document.getElementById("resultMsg2").innerHTML = decode(offset, string);
+  checkDisplay("boxMsgDecode", "boxMsgEncode", string, offset);
+}
+
+function encode (offset, string) {
+  let mais = "+";
+  let result = "";
+  let finalAscii;
+  offset = parseInt(offset);
+  for (i of string.split("")) {
+    if (i.charCodeAt() >= 65 && i.charCodeAt() <= 90) {
+      finalAscii = (i.charCodeAt() - 65 + (offset % 26) + 26) % 26 + 65;
+    } else if (i.charCodeAt() >= 97 && i.charCodeAt() <= 122) {
+      finalAscii = (i.charCodeAt() - 97 + (offset % 26) + 26) % 26 + 97;
+    } else {
+      finalAscii = i.charCodeAt();
+    }
+    result += String.fromCharCode(finalAscii);
+  }
+  return result;
+}
+
+function decode (offset, string) {
+  let menos = "-";
+  let result = "";
+  let finalAscii;
+  offset = parseInt(offset);
+  for (i of string.split("")) {
+    if (i.charCodeAt(i) >= 65 && i.charCodeAt(i) <= 90) {
+      finalAscii = (i.charCodeAt(i) - 65 - (offset % 26) + 26) % 26 + 65;
+    } else if (i.charCodeAt(i) >= 97 && i.charCodeAt(i) <= 122) {
+      finalAscii = (i.charCodeAt(i) - 97 - (offset % 26) + 26) % 26 + 97;
+    } else {
+      finalAscii = i.charCodeAt(i);
+    }
+    result += String.fromCharCode(finalAscii);
+  }
+  return result;
+}
+
+function checkDisplay (element, elementToHide, string, offset) {
+  showDiv = document.getElementById(element).classList.contains("dp-none");
+  if (showDiv && string !== "" && offset !== "") {
+    changeClass(element, "dp-none", "dp-block");
+    changeClass(elementToHide, "dp-block", "dp-none");
+  } else if (string === "" || offset === "") {
+    changeClass(element, "dp-block", "dp-none");
+    alert("Preencha os campos corretamente!");
   }
 }
 
-function caesarEncode(){
-    let string = document.getElementById("message").value;
-    let offset = document.getElementById("offset").value;
-    let msgResultEncode = encode(offset, string);
-    document.getElementById("resultMsg1").innerHTML = msgResultEncode;
-    showDiv = document.getElementById('boxMsgEncode').style.display;
-  
-    if(showDiv == "none" &&  string !== "" && offset !== ""){
-      document.getElementById('boxMsgEncode').style.display = 'block';
-      document.getElementById('boxMsgDecode').style.display = 'none';
-    }else if(showDiv == "block" && string !== "" && offset !== "") {
-      document.getElementById('boxMsgEncode').style.display = 'block';
-    }else{
-      document.getElementById('boxMsgEncode').style.display = 'none';
-      alert("Preencha os campos corretamente!");
-    }
-
-    document.getElementById("message").value = "";
-    document.getElementById("offset").value = "";
-   
-
-    
+function changeClass (element, before, after) {
+  document.getElementById(element).classList.remove(before);
+  document.getElementById(element).classList.add(after);
 }
 
-function caesarDecode(){
-    let string = document.getElementById("messageDecode").value;
-    let offset = document.getElementById("offset2").value;
-    let msgResultDecode = decode(offset, string);
-    document.getElementById("resultMsg2").innerHTML = msgResultDecode;
-    showDiv = document.getElementById('boxMsgDecode').style.display;
-  
-    if(showDiv == "none" && string !== "" && offset != "" ){
-      document.getElementById('boxMsgDecode').style.display = 'block';
-      document.getElementById('boxMsgEncode').style.display = 'none';
-    }else if(showDiv == "block" && string !== "" && offset != "") {
-      alert("Preencha os campos corretamente!");
-      document.getElementById('boxMsgDecode').style.display = 'block';
-    }else{
-      document.getElementById('boxMsgDecode').style.display = 'none';
-      alert("Preencha os campos corretamente!");
-    }
-
-    document.getElementById("messageDecode").value = "";
-    document.getElementById("offset2").value = "";
+function clearInput (message, offset) {
+  document.getElementById(message).value = "";
+  document.getElementById(offset).value = "";
 }
 
-function encode(offset, string){
-    offset = parseInt(offset);
-    let result= "";
-        
-    for(let i=0; i < string.length; i++){
-      if(string.charCodeAt(i)>= 65 && string.charCodeAt(i) <= 90){
-        finalAscii =( string.charCodeAt(i) - 65 +(offset%26)+26)%26+65;
-      }else if (string.charCodeAt(i)>= 97 && string.charCodeAt(i) <= 122){
-      finalAscii =( string.charCodeAt(i) - 97 +(offset%26)+26)%26+97;
-      }else{
-       finalAscii = string.charCodeAt(i);
-      }
-       result += String.fromCharCode(finalAscii);
-    }
-    return result;
+function aboutCaesar () {
+  document.getElementById("divCaesar").classList.toggle("dp-block");
 }
-
-function decode(offset, string){
-    offset = parseInt(offset);
-    let result="";
-
-    for(let i=0; i < string.length; i++){
-      if(string.charCodeAt(i)>= 65 && string.charCodeAt(i) <= 90){
-        finalAscii =( string.charCodeAt(i) - 65 -(offset%26)+26)%26+65;
-      }else if (string.charCodeAt(i)>= 97 && string.charCodeAt(i) <= 122){
-      finalAscii =( string.charCodeAt(i) - 97 -(offset%26)+26)%26+97;
-      }else{
-       finalAscii = string.charCodeAt(i);
-      }
-       result += String.fromCharCode(finalAscii);
-    }
-    return result;
-
-}
-

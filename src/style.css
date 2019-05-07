@@ -169,3 +169,11 @@ html{
   color: white;
   width: 100%;
 }
+
+.dp-block{
+  display: block;
+}
+
+.dp-none{
+  display: none;
+}
