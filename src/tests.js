@@ -1,4 +1,4 @@
-function testCipher(result, expected){
+/*function testCipher(result, expected){
 if(result === expected){
     console.log("Está funcionando. Resultado: " + result + ". Esperado: "+ expected +".")
 }else{
@@ -38,3 +38,4 @@ testCipher(decode(2, "CcDdEe1"), "AaBbCc");
 testCipher(decode(2, "Cdceczk !"), "Abacaxi!");
 testCipher(decode(2, "Qk, dagh dgo?"), "Oi, tudo bem?");
 testCipher(decode(200, "L"), "Z");
+*/
