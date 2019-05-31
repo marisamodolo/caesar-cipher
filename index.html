@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cifra de César</title>
+    <link rel="stylesheet" href="./src/css/main.css" /> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">     
+  </head>
+  <body>
+    <main>
+      <aside class="sec-about-caesar txt-align">
+        <section class="info-caesar">
+          <img id="gif" class="about-gif dp-block" src="https://media.giphy.com/media/IXnygGeB6LPPi/giphy.gif" alt="Cifra de César">
+          <p id="artcAboutCaesar" class="text-about dp-none">Em criptografia, a <a target="_blank" href="https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar">Cifra de César</a>, também conhecida como cifra de troca, código de César ou troca de César, é uma das mais simples e conhecidas técnicas de criptografia. É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra, com um número fixo de vezes. Por exemplo, com uma troca de três posições, A seria substituído por D, B se tornaria E, e assim por diante. O nome do método é em homenagem a Júlio César, que o usou para se comunicar com os seus generais.  </p>
+        </section>
+        <section class="btn-about-section">
+          <input type=button class="btn" id="btnCaesar" value="Sobre a Cifra de César"/>
+        </section>
+      </aside>
+      <container class="input-box">
+        <section class="info txt-align">
+          <h1 class="tittle">CIFRA DE CÉSAR</h1>
+          <h3>Insira a mensagem que deseja criptografar ou descriptografar e informe o deslocamento!</h3>
+        </section>
+        <section class="section-textarea align-self">
+          <textarea cols="40" rows="6" id="message" class= "msg-box" type="text" placeholder="Digite sua mensagem aqui!"></textarea>
+        </section>
+        <section class="section-offset align-self">
+            <input type="number" class="offset-box" placeholder="Informe a chave!" id="offset" />
+        </section>
+      </container>
+      <container id="boxMsgEncode" class="btns-box">
+        <section class="section-encode">
+          <button class="btn btn-click" value="encode">Codificar</button>
+        </section>
+        <section class="section-decode">
+          <button class="btn btn-click" value="decode">Decodificar</button>
+        </section>
+      </container>
+      <container id= "boxMsgDecode" class="result-box">
+        <section class="info-msg-section">
+          <h1 class="msg txt-align">Sua mensagem aparecerá aqui!</h1>
+        </section>
+        <section class="result-msg-section">
+          <p class="msg txt-align" id="resultMsg"></p>
+        </section>
+      </container>
+      <footer class="ftr-credit"> 
+        <p class="ftr-text txt-align">Marisa Alves Modolo - Laboratória 2019</p>
+      </footer>
+    </main>
+    <script src="./src/js/cipher.js"></script>
+    <script src ="./src/test/tests.js"></script>
+  </body>
+</html>
